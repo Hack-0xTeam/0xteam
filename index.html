@@ -3,195 +3,299 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>0xTeam | Security Researcher</title>
+    <title>0xTeam - Navigation Center</title>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --bg: #000000;
-            --text: #ffffff;
-            --accent: #00ff00;
-            --secondary: #333333;
-        }
-        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Courier New', monospace;
+            font-family: 'Source Code Pro', monospace;
         }
         
         body {
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.6;
+            background: linear-gradient(to bottom, #000000, #222222);
+            color: #ffffff;
             min-height: 100vh;
-        }
-        
-        header {
-            padding: 1.5rem 2rem;
-            border-bottom: 1px solid var(--secondary);
-        }
-        
-        nav {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
-            max-width: 1200px;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1000px;
             margin: 0 auto;
         }
         
-        .logo {
-            color: var(--accent);
-            font-weight: bold;
-            font-size: 1.5rem;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-        }
-        
-        .nav-links a {
-            color: var(--text);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .nav-links a:hover {
-            color: var(--accent);
-        }
-        
-        main {
-            max-width: 1200px;
-            margin: 3rem auto;
-            padding: 0 2rem;
-        }
-        
-        section {
-            margin-bottom: 4rem;
-        }
-        
-        h1, h2 {
-            margin-bottom: 1rem;
-        }
-        
-        h1 {
-            font-size: 2.5rem;
-            color: var(--accent);
-        }
-        
-        h2 {
-            font-size: 1.8rem;
-            border-bottom: 1px solid var(--secondary);
-            padding-bottom: 0.5rem;
-            color: var(--accent);
-        }
-        
-        .hero {
+        .header {
             text-align: center;
-            padding: 4rem 0;
+            margin-bottom: 30px;
+            position: relative;
+            padding: 20px 0;
         }
         
-        .skills {
+        .title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            letter-spacing: 5px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.3);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #cccccc;
+        }
+        
+        .nav-box {
+            border: 2px solid #ffffff;
+            border-radius: 5px;
+            padding: 30px;
+            margin: 20px 0;
+            background: rgba(10, 10, 10, 0.9);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+        }
+        
+        .logo-container {
+            text-align: center;
+            margin: 20px 0;
+            padding: 15px;
+            background: #111111;
+            border-radius: 5px;
+        }
+        
+        .logo-text {
+            font-family: 'Courier New', monospace;
+            white-space: pre;
+            line-height: 1.3;
+            font-size: 12px;
+            color: #ffffff;
+            overflow-x: auto;
+            padding: 10px;
+            text-align: center;
+            letter-spacing: 0;
+        }
+        
+        .links {
             display: flex;
             flex-wrap: wrap;
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-        
-        .skill {
-            background-color: var(--secondary);
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            font-size: 0.9rem;
-            border: 1px solid #444;
-        }
-        
-        footer {
-            text-align: center;
-            padding: 2rem;
-            border-top: 1px solid var(--secondary);
-            margin-top: 3rem;
-        }
-        
-        .social-links {
-            display: flex;
             justify-content: center;
-            gap: 1.5rem;
-            margin-top: 1.5rem;
+            gap: 20px;
+            margin: 30px 0;
         }
         
-        .social-links a {
-            color: var(--text);
+        .link-btn {
+            background: transparent;
+            color: #ffffff;
+            border: 1px solid #ffffff;
+            padding: 15px 25px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: all 0.3s ease;
             text-decoration: none;
-            transition: color 0.3s;
+            display: inline-block;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
         }
         
-        .social-links a:hover {
-            color: var(--accent);
+        .link-btn:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: 0.5s;
+        }
+        
+        .link-btn:hover:before {
+            left: 100%;
+        }
+        
+        .link-btn:hover {
+            background: #ffffff;
+            color: #000000;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+        }
+        
+        .terminal {
+            background: #000000;
+            border: 1px solid #444444;
+            color: #ffffff;
+            padding: 20px;
+            margin-top: 30px;
+            font-family: monospace;
+            border-radius: 4px;
+            box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+        }
+        
+        .terminal-line {
+            margin-bottom: 10px;
+            line-height: 1.5;
+        }
+        
+        .prompt {
+            color: #00ff00;
+        }
+        
+        .footer {
+            margin-top: 40px;
+            text-align: center;
+            font-size: 14px;
+            color: #999999;
+            padding: 20px;
+            border-top: 1px solid #444444;
+            width: 100%;
+        }
+        
+        .typewriter {
+            overflow: hidden;
+            border-right: 2px solid #ffffff;
+            white-space: nowrap;
+            margin: 20px auto;
+            letter-spacing: 2px;
+            animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+            font-size: 1.2rem;
+            max-width: 100%;
+        }
+        
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+        
+        @keyframes blink-caret {
+            from, to { border-color: transparent }
+            50% { border-color: #ffffff }
         }
         
         @media (max-width: 768px) {
-            .nav-links {
-                display: none;
+            .logo-text {
+                font-size: 8px;
             }
             
-            h1 {
-                font-size: 2rem;
+            .links {
+                flex-direction: column;
+            }
+            
+            .title {
+                font-size: 1.8rem;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="logo">0xTeam</div>
-            <div class="nav-links">
-                <a href="#about">About</a>
-                <a href="#skills">Skills</a>
-            </div>
-        </nav>
-    </header>
-    
-    <main>
-        <section class="hero">
-            <h1>Security Researcher</h1>
-            <p>Specializing in vulnerability research and penetration testing</p>
-        </section>
-        
-        <section id="about">
-            <h2>About</h2>
-            <p>I'm 0xTeam, a security researcher focused on penetration testing and vulnerability discovery. With experience in multiple CTF competitions and several high-risk vulnerability findings.</p>
-            <p>My expertise includes web application security, binary exploitation, reverse engineering, and red team techniques.</p>
-        </section>
-        
-        <section id="skills">
-            <h2>Skills</h2>
-            <div class="skills">
-                <span class="skill">Penetration Testing</span>
-                <span class="skill">Vulnerability Research</span>
-                <span class="skill">Reverse Engineering</span>
-                <span class="skill">Web Security</span>
-                <span class="skill">Binary Exploitation</span>
-                <span class="skill">Python</span>
-                <span class="skill">C/C++</span>
-                <span class="skill">Assembly</span>
-                <span class="skill">Burp Suite</span>
-                <span class="skill">IDA Pro</span>
-                <span class="skill">Ghidra</span>
-                <span class="skill">Metasploit</span>
-                <span class="skill">Network Analysis</span>
-                <span class="skill">Red Teaming</span>
-            </div>
-        </section>
-    </main>
-    
-    <footer>
-        <p>© 2025 0xTeam. All rights reserved.</p>
-        <div class="social-links">
-            <a href="#">GitHub</a>
-            <a href="#">Twitter</a>
-            <a href="#">Blog</a>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">0xTeam</h1>
+            <p class="subtitle">Cyber Security | Technology Research | Development Innovation</p>
+            <div class="typewriter">Welcome to 0xTeam Navigation Center</div>
         </div>
-    </footer>
+        
+        <div class="nav-box">
+            <div class="logo-container">
+                <div class="logo-text">
+╔═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╗ 
+║                                                                                                                     ║ 
+║                             ██╗      ██████╗  ██████╗ ███████╗         ██████╗ ██╗  ██╗                             ║ 
+║                             ██║     ██╔═══██╗██╔════╝ ██╔════╝        ██╔═████╗╚██╗██╔╝                             ║ 
+║                             ██║     ██║   ██║██║  ███╗███████╗        ██║██╔██║ ╚███╔╝                              ║ 
+║                             ██║     ██║   ██║██║   ██║╚════██║        ████╔╝██║ ██╔██╗                              ║ 
+║                             ███████╗╚██████╔╝╚██████╔╝███████║███████╗╚██████╔╝██╔╝ ██╗                             ║ 
+║                             ╚══════╝ ╚═════╝  ╚═════╝ ╚══════╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝                             ║ 
+║                                                                                                                     ║ 
+║                                                                                                                     ║ 
+║                ██╗  ██╗ █████╗  ██████╗██╗  ██╗         ██████╗ ██╗  ██╗████████╗███████╗ █████╗ ███╗   ███╗        ║ 
+║                ██║  ██║██╔══██╗██╔════╝██║ ██╔╝        ██╔═████╗╚██╗██╔╝╚══██╔══╝██╔════╝██╔══██╗████╗ ████║        ║ 
+║                ███████║███████║██║     █████╔╝         ██║██╔██║ ╚███╔╝    ██║   █████╗  ███████║██╔████╔██║        ║ 
+║                ██╔══██║██╔══██║██║     ██╔═██╗         ████╔╝██║ ██╔██╗    ██║   ██╔══╝  ██╔══██║██║╚██╔╝██║        ║ 
+║                ██║  ██║██║  ██║╚██████╗██║  ██╗███████╗╚██████╔╝██╔╝ ██╗   ██║   ███████╗██║  ██║██║ ╚═╝ ██║        ║ 
+║                ╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚══════╝ ╚═════╝ ╚═╝  ╚═╝   ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝     ╚═╝        ║ 
+║                                                                                                                     ║ 
+║                                                                                                                     ║ 
+║                                                                                                                     ║ 
+║                                       Telegram : https://t.me/Hack_0xTeam                                           ║ 
+║                                     navigation : https://usrlnk.io/0x_team                                          ║ 
+║                                     JOIN Group : https://t.me/+7eXSg26ynepmZDk1                                     ║ 
+║                                                                                                                     ║ 
+║ --------------------------------------------------------------------------------------------------------------------║ 
+║                                                                                                                     ║ 
+║                                ▼ BUY PRIVATE SUBSCRIPTION ON OUR 7/24 ONLINE SHOP BOT ▼                             ║ 
+║                                              0x_Team TXTBASE PRICE                                                  ║ 
+║                                                  200$ | 1 Month                                                     ║ 
+║                                                  500$ | 3 Month                                                     ║ 
+║                                                 1000$ | Lifetime                                                    ║ 
+║                                                                                                                     ║ 
+║ --------------------------------------------------------------------------------------------------------------------║ 
+║                                                                                                                     ║ 
+║                                          Admin : https://t.me/Hello_root                                            ║ 
+║                                                                                                                     ║ 
+║                                                                                                                     ║ 
+╚═════════════════════════════════════════════════════════════════════════════════════════════════════════════════════╝ 
+
+                </div>
+            </div>
+            
+            <div class="links">
+                <a href="https://t.me/Hack_0xTeam" class="link-btn">Telegram Channel</a>
+                <a href="https://usrlnk.io/0x_team" class="link-btn">Navigation Page</a>
+                <a href="https://t.me/+7eXSg26ynepmZDk1" class="link-btn">Join Group</a>
+            </div>
+            
+            <div class="terminal">
+                <div class="terminal-line"><span class="prompt">></span> Welcome to 0xTeam Navigation System</div>
+                <div class="terminal-line"><span class="prompt">></span> System initialized successfully</div>
+                <div class="terminal-line"><span class="prompt">></span> Type 'help' for available commands</div>
+                <div class="terminal-line"><span class="prompt">></span> Secure connection established</div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>© 2023 0xTeam. All Rights Reserved.</p>
+            <p>Cyber Security | Technology Research | Development Innovation</p>
+        </div>
+    </div>
+
+    <script>
+        // 添加终端效果
+        document.addEventListener('DOMContentLoaded', function() {
+            const terminal = document.querySelector('.terminal');
+            
+            setTimeout(() => {
+                const newLine = document.createElement('div');
+                newLine.className = 'terminal-line';
+                terminal.appendChild(newLine);
+            }, 2000);
+            
+            setTimeout(() => {
+                const newLine = document.createElement('div');
+                newLine.className = 'terminal-line';
+                newLine.innerHTML = '<span class="prompt">></span> System ready for commands';
+                terminal.appendChild(newLine);
+            }, 3500);
+            
+            // 点击链接按钮的效果
+            const buttons = document.querySelectorAll('.link-btn');
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    this.style.transform = 'scale(0.95)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                        window.open(this.href, '_blank');
+                    }, 200);
+                });
+            });
+        });
+    </script>
 </body>
 </html>
